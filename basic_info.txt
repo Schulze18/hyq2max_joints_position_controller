@@ -1,0 +1,26 @@
+Não esquecer de dar source devel/setup.bash no workspace em cada terminal para fazer qualquer coisa, mesmo que seja para ver um tópico apenas, isso é necessário pois criei mensagens especificas.
+
+-- Roslaunchn command
+roslaunch hyq2max_control hyq2max_custom_joints_position_controller.launch
+
+
+-- Enviando novas referências (primeiro vetor posição e segundo velocidade das juntas)
+Ordem das pernas:
+Left front , Left Hind, Right Hind, Right front
+Ordem das juntas nas pernas:
+lf_haa_joint, lf_hfe_joint, lf_kfe_joint
+
+Exemplo:
+rostopic pub -- /hyq2max/HyQ2maxJointsPositionController/command hyq2max_joints_position_controller/HyQ2max_command '[-0.1,0.75, -1.5, -0.1,-0.75,1.5,-0.1,-0.75,1.5,-0.1,0.75,-1.5]' '[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]'
+
+-- Verificar estado das juntas (posição, velocidade, commando, etc):
+rostopic echo /hyq2max/HyQ2maxJointsPositionController/state_joint
+
+
+-- Verificar estado do centro de massa (não mexi muito nesse cara, mas é para estar certo):
+rostopic echo /hyq2max/ground_truth 
+
+
+Se for usar as mensagens em um plugin ou em algum pacote, de uma olhada nos arquivos .msg dentro da pasta msg do pacote 'hyq2max_joint_position_controller'
+
+

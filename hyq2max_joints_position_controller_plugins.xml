@@ -1,0 +1,5 @@
+<library path="lib/libhyq2max_joints_position_controller_lib">
+	<class name="hyq2max_joints_position_controller/HyQ2maxJointsPositionController"
+		type="hyq2max_joints_position_controller_ns::HyQ2maxJointsPositionController" 
+		base_class_type="controller_interface::ControllerBase" />
+</library>
