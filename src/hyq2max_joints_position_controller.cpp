@@ -57,9 +57,9 @@ public:
     joints.resize(12);
     for (int i = 0; i < 3; i++){
       joints[i] = hw->getHandle(lf_joints[i]);
-      joints[i+3] = hw->getHandle(lh_joints[i]);
-      joints[i+6] = hw->getHandle(rh_joints[i]);
-      joints[i+9] = hw->getHandle(rf_joints[i]);
+      joints[i+3] = hw->getHandle(rf_joints[i]);
+      joints[i+6] = hw->getHandle(lh_joints[i]);
+      joints[i+9] = hw->getHandle(rh_joints[i]);
     }
 /*
     for (int i = 0; i < 3; i++){
